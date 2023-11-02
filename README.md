@@ -53,10 +53,10 @@ In the resulting Pivot.gd script, type the following:
 ```
 extends Node3D
 
-export var speed = 15
-export var zoom_speed = 1.5
-export var zoom_min = 5
-export var zoom_max = 15
+@export var speed = 15
+@export var zoom_speed = 1.5
+@export var zoom_min = 5
+@export var zoom_max = 15
 
 func _physics_process(delta):
 	rotation_degrees.y += delta*speed
