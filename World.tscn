@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cwkxohm37urjd"]
+
+[node name="World" type="Node3D"]
+
+[node name="Marker3D" type="Marker3D" parent="."]
+
+[node name="Pivot" type="Node3D" parent="."]
