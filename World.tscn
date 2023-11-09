@@ -1,7 +1,39 @@
-[gd_scene format=3 uid="uid://cwkxohm37urjd"]
+[gd_scene load_steps=5 format=3 uid="uid://cwkxohm37urjd"]
+
+[ext_resource type="Environment" uid="uid://cqpiiet0r7pxq" path="res://Environment.tres" id="1_132ic"]
+[ext_resource type="PackedScene" uid="uid://bg0is3pbfcx3h" path="res://Cabin.tscn" id="2_0eb62"]
+[ext_resource type="Script" path="res://Pivot.gd" id="3_dgh3h"]
+
+[sub_resource type="VoxelGIData" id="VoxelGIData_6krqg"]
+_data = {}
 
 [node name="World" type="Node3D"]
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("1_132ic")
+
 [node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+
+[node name="Cabin" parent="Marker3D" instance=ExtResource("2_0eb62")]
 
 [node name="Pivot" type="Node3D" parent="."]
+script = ExtResource("3_dgh3h")
+
+[node name="Camera" type="Camera3D" parent="Pivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 5)
+current = true
+
+[node name="VoxelGI" type="VoxelGI" parent="."]
+size = Vector3(30, 30, 30)
+data = SubResource("VoxelGIData_6krqg")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.6471, 0.424905, -0.633022, -0.416198, 0.892539, 0.173648, 0.638781, 0.151095, 0.754407, -15, 10, 20)
+light_color = Color(0.917647, 0.411765, 0.0313726, 1)
+light_energy = 0.6
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.711, 4.333, 0.268)
+light_color = Color(0.772549, 0.737255, 0.427451, 1)
+omni_attenuation = 2.0

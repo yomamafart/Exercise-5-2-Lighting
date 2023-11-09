@@ -1,0 +1,14 @@
+[gd_resource type="Environment" load_steps=2 format=3 uid="uid://cqpiiet0r7pxq"]
+
+[sub_resource type="Sky" id="Sky_430eu"]
+
+[resource]
+background_mode = 1
+background_color = Color(0.266667, 0.266667, 0.266667, 1)
+sky = SubResource("Sky_430eu")
+ambient_light_source = 3
+ambient_light_color = Color(0.372549, 0.129412, 0.85098, 1)
+ambient_light_sky_contribution = 0.5
+ambient_light_energy = 0.2
+tonemap_mode = 3
+ssr_enabled = true
